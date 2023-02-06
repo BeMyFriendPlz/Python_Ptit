@@ -10,6 +10,5 @@ def coSoX(n, k):
 
 t = int(input())
 for i in range (t):
-    k = int(input())
-    s = int(input(), 2)
-    print(coSoX(s, k))
+    n, k = [int(x) for x in input().split()]
+    print(coSoX(n, k))
