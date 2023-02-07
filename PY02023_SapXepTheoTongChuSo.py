@@ -1,10 +1,11 @@
 import functools
 
 def check(n):
-    sum = 0
-    for i in n:
-        sum += int(i)
-    return sum
+    s = 0
+    while n != 0 :
+        s += n % 10
+        n = int(n / 10)
+    return s
 
 def cmd(a, b):
     if check(a) == check(b):
@@ -16,7 +17,7 @@ def cmd(a, b):
 t = int(input())
 for i in range (t):
     n = int(input())
-    lst = [x for x in input().split()]
+    lst = [int(x) for x in input().split()]
     lst = sorted(lst, key = functools.cmp_to_key(cmd))
     for i in lst : print(i, end = " ")
     print()
