@@ -1,9 +1,7 @@
 P = "ABCDEFGHIJKLMNOPQRSTUVWXYZ_."
 
 def findCharacter(k, c):
-    for i in range (len(P)):
-        if c == P[i]:
-            return P[(k + i) % 28]
+    return P[(k + P.find(c)) % 28]
 
 while True:
     string = input()
