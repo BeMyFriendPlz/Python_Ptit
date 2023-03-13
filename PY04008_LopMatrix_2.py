@@ -1,3 +1,5 @@
+import sys
+
 class Matrix:
     def __init__(self, matrix, n, m) -> None:
         self.matrix = matrix
@@ -13,12 +15,17 @@ class Matrix:
         return ans
 
 if __name__ == "__main__":
-    t = int(input())
-    for i in range(t):
-        n, m = [int(x) for x in input().split()]
-        lst = [[0] * m] * n
+    a = []
+    for line in sys.stdin: a += map(int, line.split())
+    idx = 1
+    for i in range(a[0]):
+        n, m = a[idx], a[idx + 1]
+        idx += 2
+        lst = [[0 for x in range(m)] for x in range(n)]
         for i in range (n):
-            lst[i] = [int(x) for x in input().split()]
+            for j in range(m):
+                lst[i][j] = a[idx]
+                idx += 1
         matrix1 = Matrix(lst, n, m)
         chuyenVi = [list(x) for x in zip(*lst)]
         matrix2 = Matrix(chuyenVi, m, n)
