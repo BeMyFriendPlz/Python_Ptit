@@ -17,3 +17,22 @@ for i in range(n):
 lst.sort(key=lambda x:-x.tongTien)
 for x in lst:
     print(x)
+
+"""
+3
+ML01
+May lanh SANYO
+12
+4000000
+2400000
+ML02
+May lanh HITACHI
+4
+2550000000
+0
+ML03
+May lanh NATIONAL
+5
+3000000
+150000
+"""
